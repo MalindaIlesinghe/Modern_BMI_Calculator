@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(
+        180deg,
+        hsl(195deg 83% 38%) 0%,
+        hsl(195deg 83% 33%) 22%,
+        hsl(195deg 84% 30%) 33%,
+        hsl(195deg 84% 28%) 44%,
+        hsl(195deg 84% 25%) 56%,
+        hsl(195deg 84% 23%) 67%,
+        hsl(195deg 84% 21%) 78%,
+        hsl(195deg 83% 18%) 89%,
+        hsl(195deg 83% 16%) 100%
+    );
+    --target-background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--target-background);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+body.changing-background::before {
+    opacity: 1;
+}
+
+.container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.144), rgba(255, 255, 255, 0.068));
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #ffffffde;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#heightUnit {
+    
+    width: 100%;
+}
+
+#heightCm {
+    width: 94%;
+    margin-top: 2%;
+}
+
+#weight {
+    width: 94%;
+    margin-top: 2%;
+}
+
+#heightFtIn {
+    display: none;
+}
+
+#heightFtIn input[type="number"] {
+    margin-top: 2%;
+    width: 43.25%;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #073B4C;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #073B4C;
+}
